@@ -11,7 +11,11 @@ public class BlackWhitePostProcess : VolumeComponent, IPostProcessComponent
 {
 
     public FloatParameter blendIntensity = new FloatParameter(1.0f);
-    public bool IsActive() => true;
+    public BoolParameter isEnabled = new BoolParameter(false, true);
+    public bool IsActive() {
+        return isEnabled.value;
+
+    }
     public bool IsTileCompatible() => true;
 
 }

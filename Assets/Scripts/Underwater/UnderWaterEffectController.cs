@@ -5,7 +5,7 @@ using UnityEngine.Rendering;
 
 public class NewBehaviourScript : MonoBehaviour
 {
-    public Volume postProcessingVolume; // Assign this in Inspector
+    public Volume postProcessingVolume;
     private UnderwaterPostProcess underwaterEffect;
 
 
@@ -13,7 +13,7 @@ public class NewBehaviourScript : MonoBehaviour
     {
         if (postProcessingVolume.profile.TryGet(out underwaterEffect))
         {
-            underwaterEffect.active = false;
+            underwaterEffect.isEnabled.value = false;
         }
     }
 
@@ -21,17 +21,15 @@ public class NewBehaviourScript : MonoBehaviour
     {
         if (underwaterEffect != null)
         {
-            underwaterEffect.active = !underwaterEffect.active;
+            underwaterEffect.isEnabled.value = !underwaterEffect.isEnabled.value;
         }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Triggered by: " + other.gameObject.name + " with tag: " + other.gameObject.tag);
 
-        if (other.CompareTag("Player")) // Ensure correct case
+        if (other.CompareTag("Player"))
         {
-            Debug.Log("Water effect triggered");    
             ToggleEffect();
             return;
         }

@@ -67,8 +67,9 @@ MonoBehaviour:
   m_RendererFeatures:
   - {fileID: -1878332245247344467}
   - {fileID: -1085647487312606381}
-  - {fileID: 2697559700314975165}
-  m_RendererFeatureMap: adc0de57c6d2eee553cb6fbf5c01eff0bdebae5141a86f25
+  - {fileID: 5540923940726138123}
+  - {fileID: 696359775890038721}
+  m_RendererFeatureMap: adc0de57c6d2eee553cb6fbf5c01eff00b65708ef750e54cc1dfcbd586f7a909
   m_UseNativeRenderPass: 0
   postProcessData: {fileID: 11400000, guid: 41439944d30ece34e96484bdb6645b55, type: 2}
   xrSystemData: {fileID: 11400000, guid: 60e1133243b97e347b653163a8c01b64, type: 2}
@@ -111,7 +112,20 @@ MonoBehaviour:
   m_CopyDepthMode: 0
   m_AccurateGbufferNormals: 0
   m_IntermediateTextureMode: 1
---- !u!114 &2697559700314975165
+--- !u!114 &696359775890038721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6ade5b06f3d01c42a0030e2d03ec818, type: 3}
+  m_Name: PixelationRenderFeature
+  m_EditorClassIdentifier: 
+  m_Active: 1
+--- !u!114 &5540923940726138123
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

@@ -28,8 +28,11 @@ public class UnderwaterRenderPassFeature : ScriptableRendererFeature
         {
             if (!_mat)
             {
+
                 _mat = CoreUtils.CreateEngineMaterial("Custom Post-Processing/UnderwaterEffect");
+
             }
+
             renderPassEvent = RenderPassEvent.BeforeRenderingPostProcessing;
         }
 
@@ -37,7 +40,9 @@ public class UnderwaterRenderPassFeature : ScriptableRendererFeature
         {
             RenderTextureDescriptor desc = renderingData.cameraData.cameraTargetDescriptor;
             source = renderingData.cameraData.renderer.cameraColorTargetHandle;
+
             cmd.GetTemporaryRT(tempRT, desc, FilterMode.Bilinear);
+
             underwaterRT = new RenderTargetIdentifier(tempRT);
         }
 
@@ -47,11 +52,16 @@ public class UnderwaterRenderPassFeature : ScriptableRendererFeature
             VolumeStack stack = VolumeManager.instance.stack;
             UnderwaterPostProcess effect = stack.GetComponent<UnderwaterPostProcess>();
 
-            if (effect == null || !effect.IsActive()) return; // Ensure the effect is actually active
+            if (effect == null || !effect.IsActive()) return; 
 
             _mat.SetFloat("_DistortionStrength", effect.distortionStrength.value);
             _mat.SetFloat("_FogIntensity", effect.fogIntensity.value);
             _mat.SetColor("_WaterColor", effect.waterColor.value);
+            //_mat.SetTexture("_DistortionTex", effect.noiseTexture.value);
+            _mat.SetTexture("_CausticTex", effect.CausticTexture.value);
+            _mat.SetFloat("_CausticStrength", effect.CausticStrength.value);
+
+            _mat.SetFloat("_ChromaticAmount", effect.ChromaticAmount.value);
 
             Blit(cmd, source, underwaterRT, _mat, 0);
             Blit(cmd, underwaterRT, source);

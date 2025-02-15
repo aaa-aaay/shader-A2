@@ -55,10 +55,10 @@ Material:
     - _QueueOffset: 0
     - _edge_color: -0.08
     - _offset: 0.6
-    - _ripple_density: 8.09
-    - _ripple_speed: 0.59
-    - _slimness: 3.62
-    - _wave_speed: 0.14
+    - _ripple_density: 6.08
+    - _ripple_speed: 1.37
+    - _slimness: 1.63
+    - _wave_speed: 0.09
     m_Colors:
     - _Base_Color: {r: 0.14484686, g: 0.48623437, b: 0.8773585, a: 1}
     - _egde_color: {r: 1, g: 1, b: 1, a: 0}
