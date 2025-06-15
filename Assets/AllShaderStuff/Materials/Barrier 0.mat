@@ -43,7 +43,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _Dissolve_Outline_Thickness: 0.11
-    - _Dissolve_Value: 1
+    - _Dissolve_Value: 0
     - _QueueControl: 0
     - _QueueOffset: 0
     - _fill: 0.02
